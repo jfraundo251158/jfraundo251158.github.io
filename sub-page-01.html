@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-
-    <meta http-equiv="content-type" content="text/html; charset=windows-1252">
+    <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
   </head>
   <body>
     <h1>
@@ -12,10 +12,10 @@
     <h1>
       <meta name="ProgId" content="OneNote.File">
       <meta name="Generator" content="Microsoft OneNote 15">
-      <h1 style="margin:0in;font-family:&quot;Calibri
-        Light&quot;;font-size:20.0pt"><!--StartFragment-->SolVecConMon:
-        Server setup description<!--EndFragment--></h1>
     </h1>
+    <h1 style="margin:0in;font-family:&quot;Calibri
+      Light&quot;;font-size:20.0pt"><!--StartFragment-->SolVecConMon:
+      Server setup description<!--EndFragment--></h1>
     <meta http-equiv="Content-Type" content="text/html;
       charset=windows-1252">
     <meta http-equiv="Content-Type" content="text/html;
@@ -23,41 +23,30 @@
     <h2
       style="margin:0in;font-family:Calibri;font-size:14.0pt;color:#2E75B5">Preamble</h2>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Please
-      find below my
-      setup, which is driving the SolVecConMon Apple Watch app on the
-      server site. I
-      did my best to figure out the minimum necessary configuration
-      steps. This was
-      very time consuming - and will probably save your setup time : - )
-    </p>
+      find below my setup, which is driving the SolVecConMon Apple Watch
+      app on the server site. I did my best to figure out the minimum
+      necessary configuration steps. This was very time consuming - and
+      will probably save your setup time : - ) </p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Please
-      feel free to
-      let me know what could be improved.</p>
+      feel free to let me know what could be improved.</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Solar
-      Charging evcc
-      - <a href="https://evcc.io">https://evcc.io</a>, which needs to
-      be installed on
-      a server in your local network is a perfect system to control the
-      battery loading
-      for cars and bicycles. It also shows all relevant power production
-      and
+      Charging evcc - <a href="https://evcc.io">https://evcc.io</a>,
+      which needs to be installed on a server in your local network is a
+      perfect system to control the battery loading for cars and
+      bicycles. It also shows all relevant power production and
       consuming values of your solar grid and devices - this with a nice
-      UI on
-      Internet browsers and mobiles.<br>
+      UI on Internet browsers and mobiles.<br>
       With no other extra services installed - you have access only in
-      the local
-      network or via a VPN connection from outside.</p>
+      the local network or via a VPN connection from outside.</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
     <h2
       style="margin:0in;font-family:Calibri;font-size:14.0pt;color:#2E75B5">Goal</h2>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">To setup
-      a small and
-      cheap server that provides a direct and save access on <a
-        href="https://evcc.io">https://evcc.io</a>
-      from anywhere in the world, which is used by SolVecConMon to
-      provide below items
-      on your Apple Watch with a finger tip.</p>
+      a small and cheap server that provides a direct and save access on
+      <a href="https://evcc.io">https://evcc.io</a> from anywhere in the
+      world, which is used by SolVecConMon to provide below items on
+      your Apple Watch with a finger tip.</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">REAL TIME
       TRACKING</p>
@@ -73,86 +62,82 @@
           charging/discharging</span></li>
       <li style="margin-top:0;margin-bottom:0;vertical-align:middle"><span
           style="font-family:Calibri;font-size:11.0pt">Vehicle(loadpoint)
+
           monitoring</span></li>
       <li style="margin-top:0;margin-bottom:0;vertical-align:middle"><span
           style="font-family:Calibri;font-size:11.0pt">Vehicle(loadpoint)
+
           charge mode control </span></li>
     </ul>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
     <h2
       style="margin:0in;font-family:Calibri;font-size:14.0pt;color:#2E75B5">Setup
+
       steps</h2>
     <h3
       style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#1F3763">Router
 (e.g.
+
       Fritzbox etc.)</h3>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Make a
-      https port
-      forwarding<span style="mso-spacerun:yes">&nbsp; </span>- port 443
-      - to the Raspberry
-      PI 4 </p>
+      https port forwarding<span style="mso-spacerun:yes">&nbsp; </span>-
+      port 443 - to the Raspberry PI 4 </p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
     <h3
       style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#1F3763">Raspberry
 PI
+
       4</h3>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Prepare
-      SD Card via
-      RaspberryPI Imager Raspberry PI OS: <a
+      SD Card via RaspberryPI Imager Raspberry PI OS: <a
         href="https://www.raspberrypi.com/software/">https://www.raspberrypi.com/software/</a></p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Boot and
-      run the
-      setup programm: <a
+      run the setup programm: <a
 href="https://www.raspberrypi.com/documentation/computers/getting-started.html">https://www.raspberrypi.com/documentation/computers/getting-started.html</a></p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">In the
-      setup you
-      need to enter a user and password. In my case I have used
-      raspiuser. </p>
+      setup you need to enter a user and password. In my case I have
+      used raspiuser. </p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">!! If you
-      go for
-      another user you need to change below configuration files where <span
-        style="font-weight:bold">raspiuser</span> is !!</p>
+      go for another user you need to change below configuration files
+      where <span style="font-weight:bold">raspiuser</span> is !!</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
     <h3
       style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#1F3763">Docker</h3>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Follow
-      the
-      instructions in <a
+      the instructions in <a
         href="https://raspberrytips.com/docker-on-raspberry-pi/">https://raspberrytips.com/docker-on-raspberry-pi/</a></p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Create in
       /home/<span style="font-weight:bold">raspiuser</span> a directory
-      Docker-Compose and in
-      there the directories evcc and reverse-proxy. In reverse-proxy
-      create the
-      directory rules.</p>
+      Docker-Compose and in there the directories evcc and
+      reverse-proxy. In reverse-proxy create the directory rules.</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Folder
       structure </p>
     <p style="margin:0in;font-family:&quot;Courier
-      New&quot;;font-size:11.0pt">home ---
-      raspiuser --- Docker-Compose</p>
+      New&quot;;font-size:11.0pt">home --- raspiuser --- Docker-Compose</p>
     <p style="margin:0in;font-family:&quot;Courier
       New&quot;;font-size:11.0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
       </span>I --- evcc<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
       </span></p>
     <p style="margin:0in;font-family:&quot;Courier
       New&quot;;font-size:11.0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      </span>I ---
-      reverse-proxy </p>
+
+      </span>I --- reverse-proxy </p>
     <p style="margin:0in;font-family:&quot;Courier
       New&quot;;font-size:11.0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      </span>I ---
-      rules</p>
+
+      </span>I --- rules</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
     <h3
       style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#1F3763">Docker:
+
       evcc<br>
     </h3>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">In evcc
-      create a
-      file called <span style="font-weight:bold">docker-compose.yml</span>
-      with below
-      content</p>
+      create a file called <span style="font-weight:bold">docker-compose.yml</span>
+      with below content</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">version:
       "3"</p>
@@ -166,9 +151,11 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
       evcc</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>network_mode:
+
       host</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>container_name:
+
       myevcc</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>image:
@@ -182,22 +169,21 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>-
       /home/<span style="font-weight:bold">raspiuser</span>/.evcc:/root/.evcc<span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#
-      !! to be adapted if not having used
-      raspiuser !!</p>
+      !! to be adapted if not having used raspiuser !!</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>restart:
       unless-stopped</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
     <h3
       style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#1F3763">Docker:
+
       Traefik</h3>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">In
-      reverse-proxy
-      create another file also called <span style="font-weight:bold">docker-compose.yml</span>
-      with below content</p>
+      reverse-proxy create another file also called <span
+        style="font-weight:bold">docker-compose.yml</span> with below
+      content</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">!! You
-      need to add
-      your email adress !!</p>
+      need to add your email adress !!</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">version:
       "3"</p>
@@ -206,6 +192,7 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
         style="mso-spacerun:yes">&nbsp; </span>reverse-proxy:</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>container_name:
+
       reverse-proxy</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>image:
@@ -239,8 +226,7 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#
-      Let's encrypt with certification
-      resolver etc.</p>
+      Let's encrypt with certification resolver etc.</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>-
       "--entrypoints.https.http.tls.certResolver=le"</p>
@@ -251,6 +237,7 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>-
       "--certificatesresolvers.le.acme.email=xxxxxxxx@icloud.com"<span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
       </span># !! YOUR EMAIL !!</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>-
@@ -262,10 +249,12 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>-
       "80:80"<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
       </span># Let's Encrypt</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>-
       "443:443"<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
       </span># SolVecConMon</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
@@ -280,26 +269,22 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>-
       "./letsencrypt:/letsencrypt"<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
       </span># a must for Let's Encrypt</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">In rules
-      create a
-      file called <span style="font-weight:bold">rules.yml</span> with
-      below content</p>
+      create a file called <span style="font-weight:bold">rules.yml</span>
+      with below content</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">!! You
-      need to add
-      your global IP address !! For me it's the global IP provided by
-      the FritzBox.</p>
+      need to add your global IP address !! For me it's the global IP
+      provided by the FritzBox.</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">!! For
-      Basic
-      Authentication you need to enter user:password and password
+      Basic Authentication you need to enter user:password and password
       encrypted via <a href="https://htpasswdgenerator.de">https://htpasswdgenerator.de</a>
     </p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">!! Later
-      the clean
-      text user and password need to be entered in Apple Watch
-      SolVecConMon's
-      configuration tab</p>
+      the clean text user and password need to be entered in Apple Watch
+      SolVecConMon's configuration tab</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">http:</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
@@ -309,35 +294,44 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>rule:
 "Host(`xxxxxxxxxxxxxx.myfritz.net`)"
+
       '<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#
       !! GLOBAL IP !!</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>service:
+
       "evcc"</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>middlewares:</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
       </span>- "evcc-auth"</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
       </span></p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>evcc-https:</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>rule:
+
       "Host(`xxxxxxxxxxxxxx.myfritz.net`)"<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
       </span># !! GLOBAL IP !!</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>service:
+
       "evcc"</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>middlewares:</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
       </span>- "evcc-auth"</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
       </span></p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp; </span>services:</p>
@@ -347,15 +341,19 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Loadbalancer:</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
       </span>servers:</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
       </span>- url: "<a href="http://raspberrypi:7070">http://raspberrypi:7070</a>"<span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      </span># !! evcc service
-      running on same raspi watching default port 7070 !!</p>
+
+      </span># !! evcc service running on same raspi watching default
+      port 7070 !!</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
       </span></p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp; </span>middlewares:</p>
@@ -365,103 +363,94 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>basicAuth:</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
       </span>users:</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      </span>- "USER IN CLEAN TEXT:ENCRYPTED
-      PASSWORD"<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+      </span>- "USER IN CLEAN TEXT:ENCRYPTED PASSWORD"<span
+        style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
       </span># !! user:pw !!</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
     <h2
       style="margin:0in;font-family:Calibri;font-size:14.0pt;color:#2E75B5">System
+
       start</h2>
     <h3
       style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#1F3763">evcc</h3>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Open a
-      terminal and
-      go into home/raspiuser/Docker-Compose/evcc and execute: sudo
-      docker-compose up
-      -d</p>
+      terminal and go into home/raspiuser/Docker-Compose/evcc and
+      execute: sudo docker-compose up -d</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">With the
-      first
-      execution docker is pulling the evcc image and then launch it</p>
+      first execution docker is pulling the evcc image and then launch
+      it</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
     <h3
       style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#1F3763">Traefik</h3>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Open
-      terminal and go
-      into home/raspiuser/Docker-Compose/reverse-proxy and execute: sudo
-      docker-compose up -d</p>
+      terminal and go into home/raspiuser/Docker-Compose/reverse-proxy
+      and execute: sudo docker-compose up -d</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">With the
-      first
-      execution docker is pulling the traefik image and then launch it.</p>
+      first execution docker is pulling the traefik image and then
+      launch it.</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">And with
-      first
-      traefik's launch automatically a folder should be created called
-      letsencrypt
-      within reverse-proxy folder. And automatically a file called
-      acme.json should
-      have been created in there.</p>
+      first traefik's launch automatically a folder should be created
+      called letsencrypt within reverse-proxy folder. And automatically
+      a file called acme.json should have been created in there.</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
     <h2
       style="margin:0in;font-family:Calibri;font-size:14.0pt;color:#2E75B5">Some
+
       notes</h2>
     <h3
       style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#1F3763">evcc</h3>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Since you
-      probably didn't
-      configure evcc on your solar devices so far - evcc will start in
-      demo mode. You need
-      to setup evcc and copy the resulting evcc.yaml config file into
-      /etc directory
-      and restart the evcc container. The evcc configuration is not part
-      of this
+      probably didn't configure evcc on your solar devices so far - evcc
+      will start in demo mode. You need to setup evcc and copy the
+      resulting evcc.yaml config file into /etc directory and restart
+      the evcc container. The evcc configuration is not part of this
       description. Please follow- <a href="https://evcc.io">https://evcc.io</a>
       documentation for it.</p>
     <h2 style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</h2>
     <h3
       style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#1F3763">Most
 important
+
       docker commands</h3>
     <h4
       style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#2F5496"><span
         style="font-style:italic">Compose</span></h4>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">docker-compose
-      up -d
-      / lauch container and load image if necessary</p>
+
+      up -d / lauch container and load image if necessary</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
     <h4
       style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#2F5496"><span
         style="font-style:italic">Container</span></h4>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">docker ps
-      / monitor
-      the running containers</p>
+      / monitor the running containers</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">docker
-      logs
-      {CONTAINER} / show container log e.g. docker logs myevcc or docker
-      logs
-      reverse-proxy</p>
+      logs {CONTAINER} / show container log e.g. docker logs myevcc or
+      docker logs reverse-proxy</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">docker
-      kill
-      {CONTAINER} / kill container</p>
+      kill {CONTAINER} / kill container</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
     <h4
       style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#2F5496"><span
         style="font-style:italic">Administration</span></h4>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">docker
-      stats / show
-      statistics (CPU, memory usage..)</p>
+      stats / show statistics (CPU, memory usage..)</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">docker
-      help /
-      display list of all Docker commands</p>
+      help / display list of all Docker commands</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
     <h3
       style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#1F3763">Trouble
+
       shooting</h3>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Please
-      have a look
-      into docker logs… and the evcc, docker, traefik and let's encrypt
-      documentation.</p>
+      have a look into docker logs… and the evcc, docker, traefik and
+      let's encrypt documentation.</p>
     <meta name="ProgId" content="OneNote.File">
     <meta name="Generator" content="Microsoft OneNote 15">
     <!--StartFragment--><!--EndFragment-->
@@ -469,7 +458,12 @@ important
     <meta name="Generator" content="Microsoft OneNote 15">
     <!--StartFragment--><!--EndFragment--><br>
     <br>
-    <br>
+    <font size="+1"><font color="#6600cc">If you find this server setup
+        description was helping you much then please support me with a <a
+          moz-do-not-send="true"
+          href="https://www.paypal.com/donate/?hosted_button_id=CCHCTPZT38ZS8">donation.</a></font></font><font
+      size="+1"><br>
+    </font><br>
     <br>
     (C) 2023 Juergen Fraundorfer
   </body>
