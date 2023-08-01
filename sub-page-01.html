@@ -4,8 +4,8 @@
     <meta http-equiv="content-type" content="text/html;
       charset=windows-1252">
   </head>
-  <body text="#000000" vlink="#0000ee" bgcolor="#cccccc" alink="#EE0000"
-    link="#0000EE">
+  <body bgcolor="#cccccc" alink="#EE0000" link="#0000EE" text="#000000"
+    vlink="#0000ee">
     <h1>
       <meta http-equiv="Content-Type" content="text/html;
         charset=windows-1252">
@@ -90,9 +90,11 @@
 
 
 
+
           monitoring</span></li>
       <li style="margin-top:0;margin-bottom:0;vertical-align:middle"><span
           style="font-family:Calibri;font-size:11.0pt">Vehicle(loadpoint)
+
 
 
 
@@ -122,6 +124,7 @@
 
 
 
+
       Fritzbox etc.)</h3>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Make a
       https port forwarding<span style="mso-spacerun:yes">&nbsp; </span>-
@@ -130,6 +133,7 @@
     <h3
       style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#1F3763">Raspberry
 PI
+
 
 
 
@@ -155,10 +159,13 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
       where <span style="font-weight:bold">raspiuser</span> is !!</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
     <h3
-      style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#1F3763">Docker</h3>
+      style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#1F3763">Docker
+      and Docker-Compose<br>
+    </h3>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Follow
       the instructions in <a
-        href="https://raspberrytips.com/docker-on-raspberry-pi/">https://raspberrytips.com/docker-on-raspberry-pi/</a></p>
+        href="https://bangertech.de/docker-docker-compose-auf-dem-raspberrypi/"
+        moz-do-not-send="true">https://bangertech.de/docker-docker-compose-auf-dem-raspberrypi/</a></p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Create in
       /home/<span style="font-weight:bold">raspiuser</span> a directory
       Docker-Compose and in there the directories evcc and
@@ -180,7 +187,9 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
 
 
 
+
       </span>I --- evcc<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 
 
 
@@ -204,9 +213,11 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
 
 
 
+
       </span>I --- reverse-proxy </p>
     <p style="margin:0in;font-family:&quot;Courier
       New&quot;;font-size:11.0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 
 
 
@@ -221,6 +232,7 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
     <h3
       style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#1F3763">Docker:
+
 
 
 
@@ -259,9 +271,11 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
 
 
 
+
       host</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>container_name:
+
 
 
 
@@ -302,6 +316,7 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
 
 
 
+
       Traefik</h3>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">In
       reverse-proxy create another file also called <span
@@ -317,6 +332,7 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
         style="mso-spacerun:yes">&nbsp; </span>reverse-proxy:</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>container_name:
+
 
 
 
@@ -369,8 +385,9 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
       "--certificatesresolvers.le.acme.tlschallenge=true"</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>-
-      "--certificatesresolvers.le.acme.email=xxxxxxxx@icloud.com"<span
+      "--certificatesresolvers.le.acme.email=xxxxxxxx@xxxxx.xxx"<span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 
 
 
@@ -402,10 +419,12 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
 
 
 
+
       </span># Let's Encrypt</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>-
       "443:443"<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 
 
 
@@ -440,6 +459,7 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
 
 
 
+
       </span># a must for Let's Encrypt</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">In rules
@@ -458,65 +478,9 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">http:</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
-        style="mso-spacerun:yes">&nbsp; </span>routers:</p>
-    <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
-        style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>evcc-http:</p>
-    <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
-        style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>rule:
-"Host(`xxxxxxxxxxxxxx.myfritz.net`)"
-
-
-
-
-
-
-
-
-
-
-      '<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#
-      !! GLOBAL IP !!</p>
-    <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
-        style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>service:
-
-
-
-
-
-
-
-
-
-
-      "evcc"</p>
-    <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
-        style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>middlewares:</p>
-    <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
-        style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-
-
-
-
-
-
-
-
-
-      </span>- "evcc-auth"</p>
-    <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
-        style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-
-
-
-
-
-
-
-
-
-      </span></p>
+        style="mso-spacerun:yes">&nbsp; </span>routers:<span
+        style="mso-spacerun:yes"><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span> </p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>evcc-https:</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
@@ -531,7 +495,9 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
 
 
 
+
       "Host(`xxxxxxxxxxxxxx.myfritz.net`)"<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 
 
 
@@ -555,6 +521,7 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
 
 
 
+
       "evcc"</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>middlewares:</p>
@@ -570,9 +537,11 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
 
 
 
+
       </span>- "evcc-auth"</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 
 
 
@@ -602,9 +571,11 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
 
 
 
+
       </span>servers:</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 
 
 
@@ -627,10 +598,12 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
 
 
 
+
       </span># !! evcc service running on same raspi watching default
       port 7070 !!</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 
 
 
@@ -660,6 +633,7 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
 
 
 
+
       </span>users:</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -673,8 +647,10 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
 
 
 
+
       </span>- "USER IN CLEAN TEXT:ENCRYPTED PASSWORD"<span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 
 
 
@@ -740,11 +716,13 @@ important
 
 
 
+
       docker commands</h3>
     <h4
       style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#2F5496"><span
         style="font-style:italic">Compose</span></h4>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">docker-compose
+
 
 
 
@@ -774,6 +752,7 @@ important
     </p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><!--StartFragment-->docker
 stop
+
 
       {CONTAINER} / stop container<!--EndFragment--></p>
     <p></p>
@@ -825,6 +804,7 @@ stop
 
 
 
+
       shooting</h3>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Please
       have a look into docker logs and the evcc, docker, traefik and
@@ -846,9 +826,9 @@ stop
           a review in the Apple App Store and a PayPal</font></font> <input
 src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif"
         name="submit" title="PayPal - The safer, easier way to pay
-        online!" alt="Donate with PayPal button" type="image" border="0">
+        online!" alt="Donate with PayPal button" border="0" type="image">
       <img alt="" src="https://www.paypal.com/en_DE/i/scr/pixel.gif"
-        width="1" border="0" height="1"><font color="#663366"><font
+        border="0" height="1" width="1"><font color="#663366"><font
           color="#663366">Thank you</font></font><font color="#663366"><font
           color="#663366"><font size="+1">!</font></font>&nbsp;</font> </form>
     <br>
