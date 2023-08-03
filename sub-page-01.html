@@ -17,9 +17,10 @@
     <h1 style="margin:0in;font-family:&quot;Calibri
       Light&quot;;font-size:20.0pt"><!--StartFragment-->SolVecConMon:
       Server setup description</h1>
-    <h2
-      style="margin:0in;font-family:Calibri;font-size:14.0pt;color:#2E75B5"><br>
-    </h2>
+    <p><font color="#993399">As of 03-Aug-23:</font> Server setup based
+      on RaspberryPi Image containing all software and configuration -
+      please see below.<br>
+    </p>
     <h2
       style="margin:0in;font-family:Calibri;font-size:14.0pt;color:#2E75B5">Contents</h2>
     <ul>
@@ -91,9 +92,11 @@
 
 
 
+
           monitoring</span></li>
       <li style="margin-top:0;margin-bottom:0;vertical-align:middle"><span
           style="font-family:Calibri;font-size:11.0pt">Vehicle(loadpoint)
+
 
 
 
@@ -125,14 +128,94 @@
 
 
 
-      Fritzbox etc.)</h3>
+
+      Fritzbox etc.) - to be done for for both setup alternatives<br>
+    </h3>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Make a
       https port forwarding<span style="mso-spacerun:yes">&nbsp; </span>-
-      port 443 - to the Raspberry PI 4 </p>
-    <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+      port 443 - to the Raspberry PI 4 ( the setup image is using
+      hostname raspberrypi2 )<br>
+    </p>
+    <h3>Alternative - based on RaspberryPI4 8/64 GB Image </h3>
     <h3
       style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#1F3763">Raspberry
 PI
+
+
+
+
+
+
+
+
+
+
+
+
+      4</h3>
+    <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Download
+      <a moz-do-not-send="true"
+href="https://github.com/jfraundo251158/jfraundo251158.github.io/releases/download/v1.0.0/RaspiPI4-8-64-delivery-image.img.zip">RaspiPi4-8-64-delivery-image.zip</a>
+      and unzip RaspiPI4-8-64-delivery-image.img.zip and restore it on a
+      64 GB SD Card by using e.g. ApplePiBaker.<br>
+    </p>
+    <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Insert SD
+      Card into raspi and power up. It boots without the need of
+      entering raspiuser/raspipw.</p>
+    <p style="margin:0in;font-family:Calibri;font-size:11.0pt">You would
+      not need to connect a keyboard and a mouse since VNC and ssh is
+      enabled.</p>
+    <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><br>
+    </p>
+    <h3
+      style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#1F3763">Docker:
+
+
+
+
+
+
+
+
+
+
+
+
+      evcc</h3>
+    <p style="margin:0in;font-family:Calibri;font-size:11.0pt">With
+      raspiuser there is no change necessary in
+      /home/raspiuser/Docker-Compose/evcc/docker-compose.yml.<br>
+    </p>
+    <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><br>
+    </p>
+    <h3
+      style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#1F3763">Docker:
+
+
+
+
+
+
+
+
+
+
+
+
+      Traefik<br>
+    </h3>
+    <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Adapt
+      /home/raspiuser/Docker-Compose/reverse-proxy/docker-compose.yml
+      and modify ../rules/rules.yml on your environment - please see
+      below.<br>
+    </p>
+    <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><br>
+      Continue with System start below.</p>
+    <h3>Alternative - manual components installation </h3>
+    <h3
+      style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#1F3763">Raspberry
+PI
+
 
 
 
@@ -157,26 +240,29 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">!! If you
       go for another user you need to change below configuration files
       where <span style="font-weight:bold">raspiuser</span> is !!</p>
-    <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+    <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><br>
+    </p>
     <h3
       style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#1F3763">Docker
+
       and Docker-Compose<br>
     </h3>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Follow
       the instructions in <a
         href="https://bangertech.de/docker-docker-compose-auf-dem-raspberrypi/"
         moz-do-not-send="true">https://bangertech.de/docker-docker-compose-auf-dem-raspberrypi/</a></p>
-    <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Create in
-      /home/<span style="font-weight:bold">raspiuser</span> a directory
+    <h3>Configuration tasks<br>
+    </h3>
+    <font size="-1">For the RaspberryPI image based setup below folders
+      and files already exist.<br>
+    </font><br>
+    <font size="-1">Otherwise create in /home/<span
+        style="font-weight:bold">raspiuser</span> a directory
       Docker-Compose and in there the directories evcc and
-      reverse-proxy. In reverse-proxy create the directory rules.</p>
-    <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
-    <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Folder
-      structure </p>
-    <p style="margin:0in;font-family:&quot;Courier
-      New&quot;;font-size:11.0pt">home --- raspiuser --- Docker-Compose</p>
-    <p style="margin:0in;font-family:&quot;Courier
-      New&quot;;font-size:11.0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      reverse-proxy. In reverse-proxy create the directory rules.</font><br>
+    <font size="-1">home --- raspiuser --- Docker-Compose</font> <br>
+    <font size="-1"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 
 
 
@@ -200,9 +286,9 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
 
 
 
-      </span></p>
-    <p style="margin:0in;font-family:&quot;Courier
-      New&quot;;font-size:11.0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+      </span><br>
+      <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 
 
@@ -214,9 +300,9 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
 
 
 
-      </span>I --- reverse-proxy </p>
-    <p style="margin:0in;font-family:&quot;Courier
-      New&quot;;font-size:11.0pt"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+      </span>I --- reverse-proxy <br>
+      <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 
 
@@ -228,21 +314,10 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
 
 
 
-      </span>I --- rules</p>
-    <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+
+      </span>I --- rules</font><font size="-1"> </font><br>
     <h3
       style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#1F3763">Docker:
-
-
-
-
-
-
-
-
-
-
-
       evcc<br>
     </h3>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">In evcc
@@ -272,9 +347,11 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
 
 
 
+
       host</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>container_name:
+
 
 
 
@@ -317,6 +394,7 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
 
 
 
+
       Traefik</h3>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">In
       reverse-proxy create another file also called <span
@@ -332,6 +410,7 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
         style="mso-spacerun:yes">&nbsp; </span>reverse-proxy:</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>container_name:
+
 
 
 
@@ -398,6 +477,7 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
 
 
 
+
       </span># !! YOUR EMAIL !!</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>-
@@ -420,10 +500,12 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
 
 
 
+
       </span># Let's Encrypt</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>-
       "443:443"<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 
 
 
@@ -460,220 +542,74 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
 
 
 
+
       </span># a must for Let's Encrypt</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">In rules
       create a file called <span style="font-weight:bold">rules.yml</span>
       with below content</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">!! You
-      need to add your global IP address !! For me it's the global IP
-      provided by the FritzBox.</p>
+      need to enter your global IP address !! For Fritzbox users it's
+      the global IP provided by the FritzBox</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">!! For
-      Basic Authentication you need to enter user:password and password
-      encrypted via <a href="https://htpasswdgenerator.de">https://htpasswdgenerator.de</a>
+      Basic Authentication you need to enter user:password with password
+      encrypted via <a href="https://htpasswdgenerator.de">https://htpasswdgenerator.de<br>
+      </a> </p>
+    <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;&nbsp;&nbsp;
+      In the sample below watchevcc and pwevcc are used (this is
+      independent of the raspi user)<br>
+      !! In htpasswdgenerator press Password Generation as long as there
+      is a password not having a / (slash) - see below sample.<br>
+      !! The clean text user and clean text password need to be entered
+      in Apple Watch SolVecConMon's configuration tab.</p>
+    <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+    <font size="-1">## Rules configuration</font><br>
+    <font size="-1">http:<br>
+      &nbsp; routers:<br>
+      &nbsp;&nbsp;&nbsp; evcc-https:<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rule:
+      "Host(`xxxxxxxxxxxxxxxxx.myfritz.net`)"&nbsp; # !! YOUR GLOBAL IP
+      - dyndns, myfritz !!<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; service: "evcc"<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; middlewares:<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - "evcc-auth"<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br>
+      &nbsp; services:<br>
+      &nbsp;&nbsp;&nbsp; evcc:<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Loadbalancer:<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; servers:<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - url:
+      "http://raspberrypi2:7070"&nbsp; # !! to be changed if other
+      hostname and/or other evcc port !!<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br>
+      &nbsp; middlewares:<br>
+      &nbsp;&nbsp;&nbsp; evcc-auth:<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; basicAuth:<br>
+      #&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; headerField:
+      "X-WebAuth-User"<br>
+      #&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; removeHeader: true<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; users:<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -
+      "watchevcc:$apr1$7deyab8u$ULbGI8e8DQ7Jg60vA5Nle0"&nbsp; # !! to be
+      changed if not watchevcc:pwevcc !!</font>
+    <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;<br>
+      Continue with System start below.</p>
+    <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><br>
     </p>
-    <p style="margin:0in;font-family:Calibri;font-size:11.0pt">!! Later
-      the clean text user and password need to be entered in Apple Watch
-      SolVecConMon's configuration tab</p>
-    <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
-    <p style="margin:0in;font-family:Calibri;font-size:11.0pt">http:</p>
-    <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
-        style="mso-spacerun:yes">&nbsp; </span>routers:<span
-        style="mso-spacerun:yes"><br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span> </p>
-    <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
-        style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>evcc-https:</p>
-    <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
-        style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>rule:
-
-
-
-
-
-
-
-
-
-
-
-      "Host(`xxxxxxxxxxxxxx.myfritz.net`)"<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-
-
-
-
-
-
-
-
-
-
-      </span># !! GLOBAL IP !!</p>
-    <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
-        style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>service:
-
-
-
-
-
-
-
-
-
-
-
-      "evcc"</p>
-    <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
-        style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>middlewares:</p>
-    <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
-        style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-
-
-
-
-
-
-
-
-
-
-      </span>- "evcc-auth"</p>
-    <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
-        style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-
-
-
-
-
-
-
-
-
-
-      </span></p>
-    <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
-        style="mso-spacerun:yes">&nbsp; </span>services:</p>
-    <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
-        style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>evcc:</p>
-    <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
-        style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Loadbalancer:</p>
-    <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
-        style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-
-
-
-
-
-
-
-
-
-
-      </span>servers:</p>
-    <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
-        style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-
-
-
-
-
-
-
-
-
-
-      </span>- url: "<a href="http://raspberrypi:7070">http://raspberrypi:7070</a>"<span
-        style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-
-
-
-
-
-
-
-
-
-
-      </span># !! evcc service running on same raspi watching default
-      port 7070 !!</p>
-    <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
-        style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-
-
-
-
-
-
-
-
-
-
-      </span></p>
-    <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
-        style="mso-spacerun:yes">&nbsp; </span>middlewares:</p>
-    <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
-        style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>evcc-auth:</p>
-    <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
-        style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>basicAuth:</p>
-    <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
-        style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-
-
-
-
-
-
-
-
-
-
-      </span>users:</p>
-    <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
-        style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-
-
-
-
-
-
-
-
-
-
-      </span>- "USER IN CLEAN TEXT:ENCRYPTED PASSWORD"<span
-        style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-
-
-
-
-
-
-
-
-
-
-      </span># !! user:pw !!</p>
-    <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
     <h2
       style="margin:0in;font-family:Calibri;font-size:14.0pt;color:#2E75B5"><a
         name="System_start"></a>System start</h2>
     <h3
       style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#1F3763">evcc</h3>
-    <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Open a
-      terminal and go into home/raspiuser/Docker-Compose/evcc and
-      execute: sudo docker-compose up -d</p>
-    <p style="margin:0in;font-family:Calibri;font-size:11.0pt">With the
-      first execution docker is pulling the evcc image and then launch
-      it</p>
+    <font size="-1">Before launching the myevcc container copy your
+      system's evcc.yaml into /etc - without that evcc will start in
+      demo mode, which would be also fine for a first step.</font><br>
+    <font size="-1"><br>
+      Open a terminal and enter /home/raspiuser/Docker-Compose/evcc and
+      execute: sudo docker-compose up -d<br>
+      With the first execution docker is pulling the evcc image and then
+      launch it<br>
+      Check successful starting with: docker logs myevcc</font><br>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
     <h3
       style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#1F3763">Traefik</h3>
@@ -687,25 +623,35 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
       first traefik's launch automatically a folder should be created
       called letsencrypt within reverse-proxy folder. <br>
       And automatically a file called acme.json should have been created
-      in there.</p>
+      in there.<br>
+      Check successful starting with: docker logs reverse-proxy</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
     <h2
       style="margin:0in;font-family:Calibri;font-size:14.0pt;color:#2E75B5"><a
         name="Some_notes"></a>Some notes</h2>
     <h3
+      style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#1F3763">SolVecConMon<br>
+    </h3>
+    <font size="-1">The clean text user and clean text password need to
+      be entered in Apple Watch SolVecConMon's configuration tab.<br>
+    </font><font size="-1">If users in rules.yml still is </font><font
+      size="-1"><font size="-1">"watchevcc:$apr1$7deyab8u$ULbGI8e8DQ7Jg60vA5Nle0"</font>
+      then </font><font size="-1"><font size="-1">SolVecConMon's
+        configuration tab expects </font>watchevcc:pwevcc for that.</font><br>
+    <font size="-1"></font>
+    <h3
+      style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#1F3763"><br>
+    </h3>
+    <h3
       style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#1F3763">evcc</h3>
-    <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Since you
-      probably didn't configure evcc on your solar devices so far - evcc
-      will start in demo mode. <br>
-      You need to setup evcc and copy the resulting evcc.yaml config
-      file into /etc directory and restart the evcc container. <br>
-      The evcc configuration is not part of this description. Please
-      follow- <a href="https://evcc.io">https://evcc.io</a>
-      documentation for it.</p>
+    <font size="-1">The evcc configuration is not part of this
+      description. Please follow <a href="https://evcc.io">https://evcc.io</a>
+      documentation for that.</font><br>
     <h2 style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</h2>
     <h3
       style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#1F3763">Most
 important
+
 
 
 
@@ -722,6 +668,7 @@ important
       style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#2F5496"><span
         style="font-style:italic">Compose</span></h4>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">docker-compose
+
 
 
 
@@ -754,12 +701,10 @@ important
 stop
 
 
-      {CONTAINER} / stop container<!--EndFragment--></p>
+
+      {CONTAINER} / stop container<br>
+      docker kill {CONTAINER} / kill container<!--EndFragment--></p>
     <p></p>
-    <p style="margin:0in;font-family:Calibri;font-size:11.0pt">docker
-      kill {CONTAINER} / kill container</p>
-    <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><br>
-    </p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">
       <meta http-equiv="Content-Type" content="text/html;
         charset=windows-1252">
@@ -781,8 +726,8 @@ stop
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">docker
       run {IMAGE} / run an image and download if not existing</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">docker
-      search {X} / search for an image in the docker repository</p>
-    &nbsp; <br>
+      search {X} / search for an image in the docker repository&nbsp; <br>
+    </p>
     <p></p>
     <h4
       style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#2F5496"><span
@@ -805,10 +750,11 @@ stop
 
 
 
+
       shooting</h3>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Please
-      have a look into docker logs and the evcc, docker, traefik and
-      let's encrypt documentation.</p>
+      have a look into with docker logs {CONTAINER} for myevcc and
+      reverse-proxy.</p>
     <meta name="ProgId" content="OneNote.File">
     <meta name="Generator" content="Microsoft OneNote 15">
     <!--StartFragment--><!--EndFragment-->
