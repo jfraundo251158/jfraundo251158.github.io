@@ -4,8 +4,8 @@
     <meta http-equiv="content-type" content="text/html;
       charset=windows-1252">
   </head>
-  <body text="#000000" vlink="#0000ee" bgcolor="#cccccc" alink="#EE0000"
-    link="#0000EE">
+  <body bgcolor="#cccccc" alink="#EE0000" link="#0000EE" text="#000000"
+    vlink="#0000ee">
     <h1>
       <meta http-equiv="Content-Type" content="text/html;
         charset=windows-1252">
@@ -17,7 +17,7 @@
     <h1 style="margin:0in;font-family:&quot;Calibri
       Light&quot;;font-size:20.0pt"><!--StartFragment-->SolVecConMon:
       Server setup description</h1>
-    <p><font color="#993399">As of 03-Aug-23:</font> Server setup based
+    <p><font color="#993399">As of 07-Aug-23:</font> Server setup based
       on RaspberryPi Image containing all software and configuration -
       please see below.<br>
     </p>
@@ -94,9 +94,11 @@
 
 
 
+
           monitoring</span></li>
       <li style="margin-top:0;margin-bottom:0;vertical-align:middle"><span
           style="font-family:Calibri;font-size:11.0pt">Vehicle(loadpoint)
+
 
 
 
@@ -132,6 +134,7 @@
 
 
 
+
       Fritzbox etc.) - to be done for for both setup alternatives<br>
     </h3>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Make a
@@ -143,6 +146,7 @@
     <h3
       style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#1F3763">Raspberry
 PI
+
 
 
 
@@ -186,6 +190,7 @@ href="https://github.com/jfraundo251158/jfraundo251158.github.io/releases/downlo
 
 
 
+
       evcc</h3>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">With
       raspiuser there is no change necessary in
@@ -195,6 +200,7 @@ href="https://github.com/jfraundo251158/jfraundo251158.github.io/releases/downlo
     </p>
     <h3
       style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#1F3763">Docker:
+
 
 
 
@@ -234,6 +240,7 @@ PI
 
 
 
+
       4</h3>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Prepare
       SD Card via RaspberryPI Imager Raspberry PI OS: <a
@@ -251,6 +258,7 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
     </p>
     <h3
       style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#1F3763">Docker
+
 
 
       and Docker-Compose<br>
@@ -284,9 +292,12 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
 
 
 
+
         </span>I --- evcc<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
           <br>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 
 
 
@@ -315,9 +326,11 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
 
 
 
+
         </span>I --- rules</font><font size="-1"> </font></p>
     <h3
       style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#1F3763">Docker:
+
 
       evcc<br>
     </h3>
@@ -350,9 +363,11 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
 
 
 
+
       host</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>container_name:
+
 
 
 
@@ -399,6 +414,7 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
 
 
 
+
       Traefik</h3>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">In
       reverse-proxy create another file also called <span
@@ -414,6 +430,7 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
         style="mso-spacerun:yes">&nbsp; </span>reverse-proxy:</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>container_name:
+
 
 
 
@@ -484,6 +501,7 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
 
 
 
+
       </span># !! YOUR EMAIL !!</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>-
@@ -508,10 +526,12 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
 
 
 
+
       </span># Let's Encrypt</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>-
       "443:443"<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 
 
 
@@ -552,6 +572,7 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
 
 
 
+
       </span># a must for Let's Encrypt</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">In rules
@@ -565,6 +586,7 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
       encrypted via <a href="https://htpasswdgenerator.de">https://htpasswdgenerator.de<br>
       </a> </p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;&nbsp;&nbsp;
+
 
       In the sample below watchevcc and pwevcc are used (this is
       independent of the raspi user)<br>
@@ -603,6 +625,7 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
         "watchevcc:$apr1$7deyab8u$ULbGI8e8DQ7Jg60vA5Nle0"&nbsp; # !! to
         be changed if not watchevcc:pwevcc !!</font></p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;Continue
+
       with System start below.</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><br>
     </p>
@@ -670,11 +693,13 @@ important
 
 
 
+
       docker commands</h3>
     <h4
       style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#2F5496"><span
         style="font-style:italic">Compose</span></h4>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">docker-compose
+
 
 
 
@@ -707,6 +732,7 @@ important
     </p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><!--StartFragment-->docker
 stop
+
 
 
 
@@ -761,6 +787,7 @@ stop
 
 
 
+
       shooting</h3>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Please
       have a look into with docker logs {CONTAINER} for myevcc and
@@ -782,9 +809,9 @@ stop
           a review in the Apple App Store and a PayPal</font></font> <input
 src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif"
         name="submit" title="PayPal - The safer, easier way to pay
-        online!" alt="Donate with PayPal button" type="image" border="0">
+        online!" alt="Donate with PayPal button" border="0" type="image">
       <img alt="" src="https://www.paypal.com/en_DE/i/scr/pixel.gif"
-        width="1" border="0" height="1"><font color="#663366"><font
+        border="0" height="1" width="1"><font color="#663366"><font
           color="#663366">Thank you</font></font><font color="#663366"><font
           color="#663366"><font size="+1">!</font></font>&nbsp;</font> </form>
     <br>
