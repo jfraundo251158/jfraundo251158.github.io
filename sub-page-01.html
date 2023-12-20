@@ -4,8 +4,8 @@
     <meta http-equiv="content-type" content="text/html;
       charset=windows-1252">
   </head>
-  <body link="#0000EE" bgcolor="#cccccc" alink="#EE0000" vlink="#0000ee"
-    text="#000000">
+  <body bgcolor="#cccccc" alink="#EE0000" vlink="#0000ee" text="#000000"
+    link="#0000EE">
     <h1>
       <meta http-equiv="Content-Type" content="text/html;
         charset=windows-1252">
@@ -17,9 +17,14 @@
     <h1 style="margin:0in;font-family:&quot;Calibri
       Light&quot;;font-size:20.0pt"><!--StartFragment-->SolVecConMon:
       Server setup description</h1>
-    <p><font color="#993399">As of 07-Aug-23:</font> Server setup based
-      on RaspberryPi Image containing all software and configuration -
-      please see below.<br>
+    <p><br>
+      <font color="#993399"><font color="#993399">As of...<br>
+          20-Dec-23:</font> <font color="#000000">Attention: please see
+          below notes in <a moz-do-not-send="true" href="#Setup_steps">Setup
+            steps</a> for the Fritzbox. And RaspberryPi Image updated on
+          up-to-date OS, Traefik 2.10.7 and evcc 0.122.1</font><br>
+        07-Aug-23:</font> Server setup based on RaspberryPi Image
+      containing all software and configuration - please see below.<br>
     </p>
     <h2
       style="margin:0in;font-family:Calibri;font-size:14.0pt;color:#2E75B5">Contents</h2>
@@ -96,9 +101,11 @@
 
 
 
+
           monitoring</span></li>
       <li style="margin-top:0;margin-bottom:0;vertical-align:middle"><span
           style="font-family:Calibri;font-size:11.0pt">Vehicle(loadpoint)
+
 
 
 
@@ -138,12 +145,19 @@
 
 
 
-      Fritzbox etc.) - to be done for for both setup alternatives<br>
+
+      Fritzbox etc.) - to be done for both setup alternatives<br>
     </h3>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Make a
       https port forwarding<span style="mso-spacerun:yes">&nbsp; </span>-
-      port 443 - to the Raspberry PI 4 ( the setup image is using
-      hostname raspberrypi2 )<br>
+      <b> port 443</b> - and http port forwarding - <b>port 80</b> - to
+      the Raspberry PI 4 ( the setup image is using hostname
+      raspberrypi2 )<br>
+      <b>Disable IPv6 </b>- Let's encrypt doesn't like it. At least
+      with Fritzbox OS in my setup.<br>
+      In the recent FritzOS update - status 20-December-23 - a <b>bug
+        with DNSSEC validation</b> was introduced. There is a patch
+      available, which needs to be installed.<br>
     </p>
     <h3>Alternative - based on RaspberryPI4 8/64 GB Image </h3>
     <h3
@@ -164,9 +178,10 @@ PI
 
 
 
+
       4</h3>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">(as of
-      07-August-23 up-to-date Raspian version)<br>
+      20-December-23 up-to-date Raspian version)<br>
       Download <a moz-do-not-send="true"
 href="https://github.com/jfraundo251158/jfraundo251158.github.io/releases/download/v1.0.0/RaspiPI4-8-64-delivery-image.img.zip">RaspiPi4-8-64-delivery-image.zip</a>
       and unzip RaspiPI4-8-64-delivery-image.img.zip and restore it on a
@@ -174,7 +189,7 @@ href="https://github.com/jfraundo251158/jfraundo251158.github.io/releases/downlo
     </p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Insert SD
       Card into raspi and power up. It boots without the need of
-      entering raspiuser/raspipw.</p>
+      entering <b>raspiuser/raspipw</b>.</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">You would
       not need to connect a keyboard and a mouse since VNC and ssh is
       enabled.</p>
@@ -197,9 +212,10 @@ href="https://github.com/jfraundo251158/jfraundo251158.github.io/releases/downlo
 
 
 
+
       evcc</h3>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">(as of
-      07-August-23 evcc version 0.118.11)<br>
+      20-December-23 evcc version 0.122.1)<br>
       With raspiuser there is no change necessary in
       /home/raspiuser/Docker-Compose/evcc/docker-compose.yml.<br>
     </p>
@@ -222,10 +238,11 @@ href="https://github.com/jfraundo251158/jfraundo251158.github.io/releases/downlo
 
 
 
+
       Traefik<br>
     </h3>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">(as of
-      07-August-23 Traefik version 2.9.10)<br>
+      20-December-23 Traefik version 2.10.7)<br>
       Adapt
       /home/raspiuser/Docker-Compose/reverse-proxy/docker-compose.yml
       and modify ../rules/rules.yml on your environment - please see
@@ -252,6 +269,7 @@ PI
 
 
 
+
       4</h3>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Prepare
       SD Card via RaspberryPI Imager Raspberry PI OS: <a
@@ -261,7 +279,7 @@ PI
 href="https://www.raspberrypi.com/documentation/computers/getting-started.html">https://www.raspberrypi.com/documentation/computers/getting-started.html</a></p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">In the
       setup you need to enter a user and password. In my case I have
-      used raspiuser. </p>
+      used <b>raspiuser</b><b> with raspipw</b> </p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">!! If you
       go for another user you need to change below configuration files
       where <span style="font-weight:bold">raspiuser</span> is !!</p>
@@ -269,6 +287,7 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
     </p>
     <h3
       style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#1F3763">Docker
+
 
 
 
@@ -306,11 +325,14 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
 
 
 
+
         </span>I --- evcc<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 
 
           <br>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 
 
 
@@ -343,9 +365,11 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
 
 
 
+
         </span>I --- rules</font><font size="-1"> </font></p>
     <h3
       style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#1F3763">Docker:
+
 
 
 
@@ -382,9 +406,11 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
 
 
 
+
       host</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>container_name:
+
 
 
 
@@ -435,6 +461,7 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
 
 
 
+
       Traefik</h3>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">In
       reverse-proxy create another file also called <span
@@ -450,6 +477,7 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
         style="mso-spacerun:yes">&nbsp; </span>reverse-proxy:</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>container_name:
+
 
 
 
@@ -524,6 +552,7 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
 
 
 
+
       </span># !! YOUR EMAIL !!</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>-
@@ -550,10 +579,12 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
 
 
 
+
       </span># Let's Encrypt</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>-
       "443:443"<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 
 
 
@@ -598,6 +629,7 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
 
 
 
+
       </span># a must for Let's Encrypt</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">In rules
@@ -611,6 +643,7 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
       encrypted via <a href="https://htpasswdgenerator.de">https://htpasswdgenerator.de<br>
       </a> </p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;&nbsp;&nbsp;
+
 
 
 
@@ -651,6 +684,7 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
         "watchevcc:$apr1$7deyab8u$ULbGI8e8DQ7Jg60vA5Nle0"&nbsp; # !! to
         be changed if not watchevcc:pwevcc !!</font></p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;Continue
+
 
 
       with System start below.</p>
@@ -694,10 +728,10 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
     </h3>
     <p><font size="-1">The clean text user and clean text password need
         to be entered in Apple Watch SolVecConMon's configuration tab.<br>
-        If users in rules.yml still is
-        "watchevcc:$apr1$7deyab8u$ULbGI8e8DQ7Jg60vA5Nle0" then
-        SolVecConMon's configuration tab expects watchevcc:pwevcc for
-        that.</font></p>
+        If users in rules.yml <b>still is
+          "watchevcc:$apr1$7deyab8u$ULbGI8e8DQ7Jg60vA5Nle0" then
+          SolVecConMon's configuration tab expects watchevcc:pwevcc for
+          that</b>.</font></p>
     <h3
       style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#1F3763">evcc<br>
     </h3>
@@ -707,6 +741,7 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
     <h3
       style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#1F3763">Most
 important
+
 
 
 
@@ -742,6 +777,7 @@ important
 
 
 
+
       up -d / lauch container and load image if necessary</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
     <h4
@@ -761,6 +797,7 @@ important
     </p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><!--StartFragment-->docker
 stop
+
 
 
 
@@ -819,6 +856,7 @@ stop
 
 
 
+
       shooting</h3>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Please
       have a look into with docker logs {CONTAINER} for myevcc and
@@ -842,7 +880,7 @@ src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif"
         name="submit" title="PayPal - The safer, easier way to pay
         online!" alt="Donate with PayPal button" border="0" type="image">
       <img alt="" src="https://www.paypal.com/en_DE/i/scr/pixel.gif"
-        height="1" border="0" width="1"><font color="#663366"><font
+        border="0" height="1" width="1"><font color="#663366"><font
           color="#663366">Thank you</font></font><font color="#663366"><font
           color="#663366"><font size="+1">!</font></font>&nbsp;</font> </form>
     <br>
