@@ -4,8 +4,8 @@
     <meta http-equiv="content-type" content="text/html;
       charset=windows-1252">
   </head>
-  <body bgcolor="#cccccc" alink="#EE0000" vlink="#0000ee" text="#000000"
-    link="#0000EE">
+  <body vlink="#0000ee" text="#000000" link="#0000EE" bgcolor="#cccccc"
+    alink="#EE0000">
     <h1>
       <meta http-equiv="Content-Type" content="text/html;
         charset=windows-1252">
@@ -21,6 +21,7 @@
       <font color="#993399"><font color="#993399">As of...<br>
           20-Dec-23:</font> <font color="#000000">Attention: please see
           below notes in <a moz-do-not-send="true" href="#Setup_steps">Setup
+
             steps</a> for the Fritzbox. And RaspberryPi Image updated on
           up-to-date OS, Traefik 2.10.7 and evcc 0.122.1</font><br>
         07-Aug-23:</font> Server setup based on RaspberryPi Image
@@ -102,9 +103,11 @@
 
 
 
+
           monitoring</span></li>
       <li style="margin-top:0;margin-bottom:0;vertical-align:middle"><span
           style="font-family:Calibri;font-size:11.0pt">Vehicle(loadpoint)
+
 
 
 
@@ -130,6 +133,7 @@
     <h3
       style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#1F3763">Router
 (e.g.
+
 
 
 
@@ -179,13 +183,23 @@ PI
 
 
 
+
       4</h3>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">(as of
       20-December-23 up-to-date Raspian version)<br>
-      Download <a moz-do-not-send="true"
-href="https://github.com/jfraundo251158/jfraundo251158.github.io/releases/download/v1.0.0/RaspiPI4-8-64-delivery-image.img.zip">RaspiPi4-8-64-delivery-image.zip</a>
-      and unzip RaspiPI4-8-64-delivery-image.img.zip and restore it on a
-      64 GB SD Card by using e.g. ApplePiBaker.<br>
+      Download the files <a moz-do-not-send="true"
+href="https://github.com/jfraundo251158/jfraundo251158.github.io/releases/download/v1.0.0/xaa">xaa</a>
+      and <a moz-do-not-send="true"
+href="https://github.com/jfraundo251158/jfraundo251158.github.io/releases/download/v1.0.0/xab">xab</a>
+      into an empty directory. Then open a Terminal and concatenate xaa
+      and xab into RaspiPi4-8-64-delivery-image.zip with the command
+      "cat x* &gt; RaspiPi4-8-64-delivery-image.zip"
+    </p>
+    <p style="margin:0in;font-family:Calibri;font-size:11.0pt">
+      <meta http-equiv="Content-Type" content="text/html;
+        charset=windows-1252">
+      Now unzip RaspiPI4-8-64-delivery-image.img.zip with a double click
+      and restore it on a 64 GB SD Card by using e.g. ApplePiBaker.<br>
     </p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Insert SD
       Card into raspi and power up. It boots without the need of
@@ -213,6 +227,7 @@ href="https://github.com/jfraundo251158/jfraundo251158.github.io/releases/downlo
 
 
 
+
       evcc</h3>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">(as of
       20-December-23 evcc version 0.122.1)<br>
@@ -223,6 +238,7 @@ href="https://github.com/jfraundo251158/jfraundo251158.github.io/releases/downlo
     </p>
     <h3
       style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#1F3763">Docker:
+
 
 
 
@@ -270,6 +286,7 @@ PI
 
 
 
+
       4</h3>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Prepare
       SD Card via RaspberryPI Imager Raspberry PI OS: <a
@@ -287,6 +304,7 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
     </p>
     <h3
       style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#1F3763">Docker
+
 
 
 
@@ -326,12 +344,15 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
 
 
 
+
         </span>I --- evcc<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 
 
 
           <br>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 
 
 
@@ -366,9 +387,11 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
 
 
 
+
         </span>I --- rules</font><font size="-1"> </font></p>
     <h3
       style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#1F3763">Docker:
+
 
 
 
@@ -407,9 +430,11 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
 
 
 
+
       host</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>container_name:
+
 
 
 
@@ -462,6 +487,7 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
 
 
 
+
       Traefik</h3>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">In
       reverse-proxy create another file also called <span
@@ -477,6 +503,7 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
         style="mso-spacerun:yes">&nbsp; </span>reverse-proxy:</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>container_name:
+
 
 
 
@@ -553,6 +580,7 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
 
 
 
+
       </span># !! YOUR EMAIL !!</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>-
@@ -580,10 +608,12 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
 
 
 
+
       </span># Let's Encrypt</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><span
         style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>-
       "443:443"<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 
 
 
@@ -630,6 +660,7 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
 
 
 
+
       </span># a must for Let's Encrypt</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">In rules
@@ -643,6 +674,7 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
       encrypted via <a href="https://htpasswdgenerator.de">https://htpasswdgenerator.de<br>
       </a> </p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;&nbsp;&nbsp;
+
 
 
 
@@ -684,6 +716,7 @@ href="https://www.raspberrypi.com/documentation/computers/getting-started.html">
         "watchevcc:$apr1$7deyab8u$ULbGI8e8DQ7Jg60vA5Nle0"&nbsp; # !! to
         be changed if not watchevcc:pwevcc !!</font></p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;Continue
+
 
 
 
@@ -757,11 +790,13 @@ important
 
 
 
+
       docker commands</h3>
     <h4
       style="margin:0in;font-family:Calibri;font-size:12.0pt;color:#2F5496"><span
         style="font-style:italic">Compose</span></h4>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">docker-compose
+
 
 
 
@@ -797,6 +832,7 @@ important
     </p>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt"><!--StartFragment-->docker
 stop
+
 
 
 
@@ -857,6 +893,7 @@ stop
 
 
 
+
       shooting</h3>
     <p style="margin:0in;font-family:Calibri;font-size:11.0pt">Please
       have a look into with docker logs {CONTAINER} for myevcc and
@@ -878,9 +915,9 @@ stop
           a review in the Apple App Store and a PayPal</font></font> <input
 src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif"
         name="submit" title="PayPal - The safer, easier way to pay
-        online!" alt="Donate with PayPal button" border="0" type="image">
+        online!" alt="Donate with PayPal button" type="image" border="0">
       <img alt="" src="https://www.paypal.com/en_DE/i/scr/pixel.gif"
-        border="0" height="1" width="1"><font color="#663366"><font
+        height="1" width="1" border="0"><font color="#663366"><font
           color="#663366">Thank you</font></font><font color="#663366"><font
           color="#663366"><font size="+1">!</font></font>&nbsp;</font> </form>
     <br>
